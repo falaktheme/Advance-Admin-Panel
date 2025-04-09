@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donezo Admin Panel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h2>Donezo</h2>
+            </div>
+            
+            <div class="menu-section">
+                <h3>MENU</h3>
+                <ul class="menu-items">
+                    <li class="active">
+                        <i class="fas fa-th-large"></i>
+                        <span>Dashboard</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-tasks"></i>
+                        <span>Tasks</span>
+                        <span class="badge">14</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-calendar"></i>
+                        <span>Calendar</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Analytics</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-users"></i>
+                        <span>Team</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="menu-section">
+                <h3>GENERAL</h3>
+                <ul class="menu-items">
+                    <li>
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-question-circle"></i>
+                        <span>Help</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="app-download">
+                <div class="download-content">
+                    <h3>Download our Mobile App</h3>
+                    <p>Get easy to access app</p>
+                    <button class="download-btn">Download</button>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search task...">
+                    <span class="shortcut">⌘F</span>
+                </div>
+                
+                <div class="user-actions">
+                    <div class="notification">
+                        <i class="far fa-envelope"></i>
+                    </div>
+                    <div class="notification">
+                        <i class="far fa-bell"></i>
+                    </div>
+                    <div class="user-profile">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User Profile">
+                        <div class="user-info">
+                            <h4>Totok Michael</h4>
+                            <p>michael20@mail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <div class="dashboard-header">
+                    <div>
+                        <h1>Dashboard</h1>
+                        <p>Plan, prioritize, and accomplish your tasks with ease.</p>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="add-project-btn"><i class="fas fa-plus"></i> Add Project</button>
+                        <button class="import-data-btn">Import Data</button>
+                    </div>
+                </div>
+                
+                <!-- Project Stats -->
+                <div class="project-stats">
+                    <div class="stat-card total-projects">
+                        <div class="stat-content">
+                            <h3>Total Projects</h3>
+                            <h2>24</h2>
+                            <p><i class="fas fa-arrow-up"></i> Increased from last month</p>
+                        </div>
+                        <div class="stat-icon">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card ended-projects">
+                        <div class="stat-content">
+                            <h3>Ended Projects</h3>
+                            <h2>10</h2>
+                            <p><i class="fas fa-arrow-up"></i> Increased from last month</p>
+                        </div>
+                        <div class="stat-icon">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card running-projects">
+                        <div class="stat-content">
+                            <h3>Running Projects</h3>
+                            <h2>12</h2>
+                            <p><i class="fas fa-arrow-up"></i> Increased from last month</p>
+                        </div>
+                        <div class="stat-icon">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card pending-projects">
+                        <div class="stat-content">
+                            <h3>Pending Project</h3>
+                            <h2>2</h2>
+                            <p>On Queue</p>
+                        </div>
+                        <div class="stat-icon">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Main Dashboard Sections -->
+                <div class="dashboard-sections">
+                    <!-- Left Section -->
+                    <div class="left-section">
+                        <!-- Project Analytics -->
+                        <div class="analytics-section">
+                            <div class="section-header">
+                                <h3>Project Analytics</h3>
+                            </div>
+                            <div class="analytics-chart">
+                                <canvas id="projectChart"></canvas>
+                            </div>
+                        </div>
+                        
+                        <!-- Team Collaboration -->
+                        <div class="team-section">
+                            <div class="section-header">
+                                <h3>Team Collaboration</h3>
+                                <button class="add-member-btn"><i class="fas fa-plus"></i> Add Member</button>
+                            </div>
+                            <div class="team-members">
+                                <div class="team-member">
+                                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Team Member">
+                                    <div class="member-info">
+                                        <h4>Alexandra Duff</h4>
+                                        <p>Working on <span>Github Project Repository</span></p>
+                                    </div>
+                                    <span class="status completed">Completed</span>
+                                </div>
+                                
+                                <div class="team-member">
+                                    <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Team Member">
+                                    <div class="member-info">
+                                        <h4>Edwin Akiniko</h4>
+                                        <p>Working on <span>Integrate User Authentication System</span></p>
+                                    </div>
+                                    <span class="status in-progress">In Progress</span>
+                                </div>
+                                
+                                <div class="team-member">
+                                    <img src="https://randomuser.me/api/portraits/men/36.jpg" alt="Team Member">
+                                    <div class="member-info">
+                                        <h4>Isaac Oluwatemilorun</h4>
+                                        <p>Working on <span>Develop Search and Filter Functionality</span></p>
+                                    </div>
+                                    <span class="status review">Review</span>
+                                </div>
+                                
+                                <div class="team-member">
+                                    <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Team Member">
+                                    <div class="member-info">
+                                        <h4>David Oshodi</h4>
+                                        <p>Working on <span>Responsive Layout for Homepage</span></p>
+                                    </div>
+                                    <span class="status in-progress">In Progress</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Section -->
+                    <div class="right-section">
+                        <!-- Reminders -->
+                        <div class="reminders-section">
+                            <div class="section-header">
+                                <h3>Reminders</h3>
+                            </div>
+                            <div class="reminder-card">
+                                <h4>Meeting with Arc Company</h4>
+                                <p>Time: 02:00 pm - 04:00 pm</p>
+                                <button class="start-meeting-btn"><i class="fas fa-video"></i> Start Meeting</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Project List -->
+                        <div class="project-list-section">
+                            <div class="section-header">
+                                <h3>Project</h3>
+                                <button class="new-btn"><i class="fas fa-plus"></i> New</button>
+                            </div>
+                            <div class="project-list">
+                                <div class="project-item">
+                                    <div class="project-icon blue">
+                                        <i class="fas fa-code"></i>
+                                    </div>
+                                    <div class="project-info">
+                                        <h4>Develop API Endpoints</h4>
+                                        <p>Due Date: Nov 28, 2023</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-item">
+                                    <div class="project-icon green">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <div class="project-info">
+                                        <h4>Onboarding Flow</h4>
+                                        <p>Due Date: Nov 28, 2023</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-item">
+                                    <div class="project-icon light-green">
+                                        <i class="fas fa-th-large"></i>
+                                    </div>
+                                    <div class="project-info">
+                                        <h4>Build Dashboard</h4>
+                                        <p>Due Date: Nov 30, 2023</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-item">
+                                    <div class="project-icon yellow">
+                                        <i class="fas fa-tachometer-alt"></i>
+                                    </div>
+                                    <div class="project-info">
+                                        <h4>Optimize Page Load</h4>
+                                        <p>Due Date: Dec 5, 2023</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-item">
+                                    <div class="project-icon purple">
+                                        <i class="fas fa-desktop"></i>
+                                    </div>
+                                    <div class="project-info">
+                                        <h4>Cross-Browser Testing</h4>
+                                        <p>Due Date: Dec 8, 2023</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Time Tracker -->
+                        <div class="time-tracker-section">
+                            <h3>Time Tracker</h3>
+                            <div class="time-display">
+                                <h2>01:24:08</h2>
+                            </div>
+                            <div class="tracker-controls">
+                                <button class="pause-btn"><i class="fas fa-pause"></i></button>
+                                <button class="stop-btn"><i class="fas fa-stop"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project Progress -->
+                <div class="project-progress-section">
+                    <div class="section-header">
+                        <h3>Project Progress</h3>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-chart">
+                            <canvas id="progressChart"></canvas>
+                            <div class="progress-info">
+                                <h2>41%</h2>
+                                <p>Project Ended</p>
+                            </div>
+                        </div>
+                        <div class="progress-legend">
+                            <div class="legend-item">
+                                <span class="legend-color completed"></span>
+                                <span>Completed</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color in-progress"></span>
+                                <span>In Progress</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color pending"></span>
+                                <span>Pending</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
